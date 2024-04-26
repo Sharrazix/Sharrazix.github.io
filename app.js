@@ -25,7 +25,7 @@ itemElements.forEach((itemElement, index) => {
   let productPrice = product.price;
 
   let productNameDiv = document.createElement("div");
-  productNameDiv.innerText = `${productName}\n${productPrice}`;
+  productNameDiv.innerText = `${productName} ${productPrice}`; // Объединяем название и цену в одну строку
   productNameDiv.classList.add("product-info");
 
   itemElement.insertBefore(productNameDiv, btn);
