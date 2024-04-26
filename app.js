@@ -24,11 +24,11 @@ itemElements.forEach((itemElement, index) => {
   let productName = product.name;
   let productPrice = product.price;
 
-  let productNameDiv = document.createElement("div");
-  productNameDiv.innerText = `${productName} ${productPrice}`; // Объединяем название и цену в одну строку
-  productNameDiv.classList.add("product-info");
+  let productInfoSpan = document.createElement("span"); // Создаем элемент span
+  productInfoSpan.innerHTML = `${productName} ${productPrice}`; // Объединяем название и цену в одну строку
+  productInfoSpan.classList.add("product-info");
 
-  itemElement.insertBefore(productNameDiv, btn);
+  itemElement.insertBefore(productInfoSpan, btn);
 
   btn.addEventListener("click", function(){
     if (tg.MainButton.isVisible) {
