@@ -25,8 +25,11 @@ itemElements.forEach((itemElement, index) => {
   let productPrice = product.price;
 
   let productNameDiv = document.createElement("div");
-  productNameDiv.innerText = `${productName}\n${productPrice}`;
   productNameDiv.classList.add("product-info");
+
+  let productNameSpan = document.createElement("span");
+  productNameSpan.innerText = `${productName} ${productPrice}`;
+  productNameDiv.appendChild(productNameSpan);
 
   itemElement.insertBefore(productNameDiv, btn);
 
