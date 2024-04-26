@@ -7,50 +7,43 @@ tg.MainButton.color = '#2cab37';
 
 let item = "";
 
-let products = [
-  { name: "Product 1", price: "$10" },
-  { name: "Product 2", price: "$15" },
-  { name: "Product 3", price: "$20" },
-  { name: "Product 4", price: "$25" },
-  { name: "Product 5", price: "$30" },
-  { name: "Product 6", price: "$35" }
-];
+let btn1 = document.getElementById("btn1");
+let btn2 = document.getElementById("btn2");
+// Add variables for other buttons
 
-let itemElements = document.querySelectorAll(".item");
-
-itemElements.forEach((itemElement, index) => {
-  let btn = itemElement.querySelector(".btn");
-  let product = products[index];
-  let productName = product.name;
-  let productPrice = product.price;
-
-  let productNameDiv = document.createElement("div");
-  productNameDiv.classList.add("product-info");
-
-  let productNameSpan = document.createElement("span");
-  productNameSpan.innerText = `${productName} ${productPrice}`;
-  productNameDiv.appendChild(productNameSpan);
-
-  itemElement.insertBefore(productNameDiv, btn);
-
-  btn.addEventListener("click", function(){
+btn1.addEventListener("click", function(){
     if (tg.MainButton.isVisible) {
-      tg.MainButton.hide();
+        tg.MainButton.hide();
     }
     else {
-      tg.MainButton.setText(`Вы выбрали ${productName}!`);
-      item = `${index + 1}`;
-      tg.MainButton.show();
+        tg.MainButton.setText("Вы выбрали товар 1!");
+        item = "Product 1 - $10"; // Change item information
+        tg.MainButton.show();
     }
-  });
 });
 
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
-  tg.sendData(item);
+btn2.addEventListener("click", function(){
+    if (tg.MainButton.isVisible) {
+        tg.MainButton.hide();
+    }
+    else {
+        tg.MainButton.setText("Вы выбрали товар 2!");
+        item = "Product 2 - $15"; // Change item information
+        tg.MainButton.show();
+    }
 });
+// Add event listeners for other buttons
+
+Telegram.WebApp.onEvent("mainButtonClicked", function(){
+    tg.sendData(item);
+});
+
 
 let usercard = document.getElementById("usercard");
 
 let p = document.createElement("p");
-p.innerText = `${tg.initDataUnsafe.user.first_name} ${tg.initDataUnsafe.user.last_name}`;
+
+p.innerText = `${tg.initDataUnsafe.user.first_name}
+${tg.initDataUnsafe.user.last_name}`;
+
 usercard.appendChild(p);
