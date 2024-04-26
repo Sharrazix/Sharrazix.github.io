@@ -8,12 +8,12 @@ tg.MainButton.color = '#2cab37';
 let item = "";
 
 let products = [
-  { name: "Product 1", price: "$10" },
-  { name: "Product 2", price: "$15" },
-  { name: "Product 3", price: "$20" },
-  { name: "Product 4", price: "$25" },
-  { name: "Product 5", price: "$30" },
-  { name: "Product 6", price: "$35" }
+  { name: "Product 1 ", price: "$10" },
+  { name: "Product 2 ", price: "$15" },
+  { name: "Product 3 ", price: "$20" },
+  { name: "Product 4 ", price: "$25" },
+  { name: "Product 5 ", price: "$30" },
+  { name: "Product 6 ", price: "$35" }
 ];
 
 let itemElements = document.querySelectorAll(".item");
